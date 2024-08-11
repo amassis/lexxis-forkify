@@ -1,8 +1,6 @@
-// import { async } from 'regenerator-runtime';
 import { API_URL } from './config';
 import { PAGINATION } from './config';
 import { API_KEY } from './config';
-// import { getJSON, sendJSON } from './helper';
 import { AJAX } from './helper';
 
 export const state = {
@@ -92,7 +90,6 @@ export const addBookmark = function (recipe) {
 
 export const deleteBookmark = function (id) {
   const index = state.bookmarks.findIndex((el) => el.id === id);
-  console.log(index);
   state.bookmarks.splice(index, 1);
 
   if (id === state.recipe.id) state.recipe.bookmarked = false;

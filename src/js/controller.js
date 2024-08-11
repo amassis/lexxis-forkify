@@ -10,10 +10,6 @@ import AddRecipeView from './views/addRecipeView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-if (module.hot) {
-  module.hot.accept();
-}
-
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -121,10 +117,6 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const newFeature = function () {
-  console.log('Welcome to this application');
-};
-
 const init = function () {
   BookmarksView.addHandlerRender(controlBookmarks);
   RecipeView.addHandlerRender(controlRecipes);
@@ -135,4 +127,3 @@ const init = function () {
   AddRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();
-newFeature();
